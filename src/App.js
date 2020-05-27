@@ -1,13 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>learn react testing</h1>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      counter: 0,
+    };
+  }
+
+  render() {
+    return (
+      <div data-test="component-app">
+        <h1 data-test="counter-display">Counter: {this.state.counter} </h1>
+
+        <button
+          data-test="increment-button"
+          onClick={() => this.setState({ counter: this.state.counter + 1 })}
+        >
+          Increment
+        </button>
+      </div>
+    );
+  }
 }
 
 export default App;
