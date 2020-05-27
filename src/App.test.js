@@ -75,3 +75,41 @@ test("clicking button increments counter display", () => {
   const counterDisplay = findByTestAttribute(wrapper, "counter-display");
   expect(counterDisplay.text()).toContain(counter + 1); //retorna texto dentro do elemento ex: <span> 1 </span>
 });
+
+test("clicking button decrements counter display", () => {
+  const counter = 7;
+  const wrapper = setup(null, { counter });
+
+  const button = findByTestAttribute(wrapper, "decrement-button");
+  button.simulate("click");
+
+  const counterDisplay = findByTestAttribute(wrapper, "counter-display");
+  expect(counterDisplay.text()).toContain(counter - 1);
+});
+
+// test("counter doesn't go below 0 and displays error msg", () => {
+//   const counter = 0;
+//   const wrapper = setup(null, { counter });
+
+//   const button = findByTestAttribute(wrapper, "decrement-button");
+//   button.simulate("click");
+//   const counterDisplay = findByTestAttribute(wrapper, "counter-display");
+
+//   const showErrState = wrapper.state("showErr");
+//   expect(showErrState).toBe(true);
+
+//   const errMsg = findByTestAttribute(wrapper, "error-msg");
+//   // expect(errMsg).toBeTruthy();
+//   expect(wrapper.contains(errMsg)).toBeTruthy();
+
+//   expect(counterDisplay.text()).toContain(0);
+// });
+
+// test("remove error msg when increment is clicked", () => {
+//   const wrapper = setup();
+
+//   const button = findByTestAttribute(wrapper, "increment-button");
+//   button.simulate("click");
+//   const errMsg = findByTestAttribute(wrapper, "error-msg");
+//   expect(errMsg).toBeFalsy();
+// });
