@@ -1,4 +1,9 @@
 import React from "react";
+import propTypes from "prop-types";
+
+Congrats.propTypes = {
+  success: propTypes.bool.isRequired,
+};
 
 export default function Congrats(props) {
   return (
