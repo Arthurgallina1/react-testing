@@ -18,7 +18,6 @@ describe("render", () => {
     beforeEach(() => {
       const initialState = { success: false };
       wrapper = setup(initialState);
-      console.log(wrapper.debug());
     });
     test("renders component without error", () => {
       const component = findByTestAttribute(wrapper, "component-input");

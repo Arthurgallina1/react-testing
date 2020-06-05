@@ -22,6 +22,7 @@ export default function GuessedWords(props) {
       ) : (
         <div data-test="component-guessed-words">
           <h3>Guessed Words</h3>
+          Guess | Matching Letters
           <ul data-test="guessed-words-node">
             {props.guessedWords.map((word, index) => (
               <li data-test="guessed-word" key={index}>
